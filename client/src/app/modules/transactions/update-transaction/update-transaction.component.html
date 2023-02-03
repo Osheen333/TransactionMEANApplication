@@ -1,0 +1,49 @@
+<div class="addContainer">
+  <div class="modalHeader">
+    <div class="editRowModal">
+      <div class="modalHeader clearfix">
+        <div class="contact-details-heading">
+          <div class="contact-details-name">
+           Update Transaction
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+
+  <div class="mt-10" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <form [formGroup]="transactionForm">
+      <div fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-form-field appearance="outline">
+          <mat-label>Comments</mat-label>
+          <input matInput formControlName="comments"  required />
+          <mat-error>
+            Alpha numeric Comments are required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <input matInput formControlName="status" [readonly]="true" required />
+          <mat-error>
+            Status is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-form-field appearance="outline">
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="date" [readonly]="true" required />
+          <mat-error>
+            Date is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="end stretch">
+        <button mat-raised-button color="primary" (click)="onSubmit(transactionForm.value)">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
