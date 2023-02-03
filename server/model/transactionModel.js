@@ -10,11 +10,26 @@ const transactionschema = new mongoose.Schema(
             type: Date,
             required: [true, 'Date is required']
         },
+        CurrencyCd: {
+            type: String,
+            required:[false]
+
+        },
+        Amount: {
+            type: Number,
+            required:[false]
+        },
         status: {
             type: String,
             enum: ['COMPLETED', 'IN PROGRESS', 'REJECTED', 'PENDING'],
             required: [true, 'status is required']
         },
+        sender : {
+            type : Object
+        },
+        recipient:{
+            type : Object
+        }
     }
 );
 
