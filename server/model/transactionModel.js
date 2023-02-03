@@ -12,7 +12,7 @@ const transactionschema = new mongoose.Schema(
         },
         status: {
             type: String,
-            enum: ['COMPLETED', 'IN PROGRESS', 'REJECTED'],
+            enum: ['COMPLETED', 'IN PROGRESS', 'REJECTED', 'PENDING'],
             required: [true, 'status is required']
         },
     }

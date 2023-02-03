@@ -27,7 +27,11 @@ export class CreateTransactionComponent implements OnInit {
     },
     {
       name: 'REJECTED',
+    },
+    {
+      name: 'PENDING'     
     }
+
   ];
 
   constructor(

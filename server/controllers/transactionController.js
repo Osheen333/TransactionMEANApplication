@@ -6,3 +6,5 @@ exports.gettransaction = factory.getOne(transaction);
 exports.createtransaction = factory.createOne(transaction);
 exports.updatetransaction = factory.updateOne(transaction);
 exports.deletetransaction = factory.deleteOne(transaction);
+exports.uploadtransactions = factory.uploadtransactions(transaction);
+

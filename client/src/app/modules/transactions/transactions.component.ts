@@ -32,6 +32,9 @@ export class TransactionsComponent implements OnInit {
     },
     {
       name: 'REJECTED',
+    },
+    {
+      name: 'PENDING'     
     }
   ];
 

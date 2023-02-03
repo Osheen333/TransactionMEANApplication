@@ -26,6 +26,9 @@ export class UpdateTransactionComponent implements OnInit {
     },
     {
       name: 'REJECTED',
+    },
+    {
+      name: 'PENDING'     
     }
   ];
 

@@ -1,5 +1,7 @@
 const AppError = require('./../utils/appError');
 const catchAsync = require('./../utils/catchAsync');
+const { Model } = require('mongoose');
+const fs = require('fs');
 
 exports.deleteOne = Model =>
     catchAsync(async (req, res, next) => {
@@ -74,4 +76,21 @@ exports.getAll = Model =>
             }
         });
     });
+
+exports.uploadtransactions = Model => 
+    catchAsync(async (req, res, next) => {
+        let data  = fs.readFileSync(req.file.path);
+        data  = JSON.parse(data);
+        const doc = await Model.create(data);
+
+        res.status(201).json({
+            status: 'success',
+            data: {
+                data: doc
+            }
+        });
+    });
+
+
+
     
