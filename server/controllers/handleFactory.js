@@ -64,7 +64,15 @@ exports.getOne = Model =>
 
 exports.getAll = Model => 
     catchAsync(async (req, res, next) => {
-        const query = Model.find({});
+
+        const {startDate, endDate, status} = req.query;
+
+        const filter = {
+            ...(status && {status}),
+            ...(startDate && {date: {$gte:startDate}}),
+            ...(endDate && {date: {$lte: endDate}}),
+        }
+        const query = Model.find(filter);
 
         const doc = await query;
 
