@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const transactionschema = new mongoose.Schema(
     {
+        id: {
+            type: Number,
+            required: [true, 'Id is required']
+        },
         comments: {
             type: String,
             required: [true, 'Comments are required']

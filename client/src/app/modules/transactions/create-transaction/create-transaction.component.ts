@@ -47,7 +47,10 @@ export class CreateTransactionComponent implements OnInit {
 
   createForm() {
     let validPattern = "^[a-zA-Z0-9 ]*$"
+    let validNumberPattern = "^[0-9]*$"
+
     this.transactionForm = this.fb.group({
+      id:['', [Validators.required, Validators.pattern(validNumberPattern)]],
       comments: ['', [Validators.required, Validators.pattern(validPattern)]],
       status: ['', [Validators.required]],
       date: ['', [Validators.required]],

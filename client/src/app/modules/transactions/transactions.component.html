@@ -41,6 +41,12 @@
                 <div class="body">
                   <div class="table-responsive">
                     <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+                      <ng-container matColumnDef="id">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>ID
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let row"> {{row.id}}
+                        </mat-cell>
+                      </ng-container>
                       <ng-container matColumnDef="comments">
                         <mat-header-cell *matHeaderCellDef mat-sort-header>Comments
                         </mat-header-cell>

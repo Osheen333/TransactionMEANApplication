@@ -49,6 +49,7 @@ export class UpdateTransactionComponent implements OnInit {
         this._id = this.returnedData._id ? this.returnedData._id : '';
         this.transactionForm.patchValue({
           _id: this._id,
+          id:this.returnedData.id,
           status: this.returnedData.status,
           comments: this.returnedData.comments,
           date: new Date(this.returnedData.date).toLocaleDateString(),
@@ -57,8 +58,11 @@ export class UpdateTransactionComponent implements OnInit {
   }
 
   createForm() {
-    let validPattern = "^[a-zA-Z0-9 ]*$"
+    let validPattern = "^[a-zA-Z0-9 ]*$";
+    let validNumberattern = "^[0-9]*$"
+
     this.transactionForm = this.fb.group({
+      id: ['', [Validators.required, Validators.pattern(validNumberattern)]],
       status: ['', [Validators.required]],
       comments: ['', [Validators.required, Validators.pattern(validPattern)]],
       date: ['', [Validators.required]],

@@ -54,13 +54,14 @@ describe('CreateTransactionComponent', () => {
     it('should create the form', () => {
       component.createForm();
       expect(component.transactionForm).toBeDefined();
-      expect(Object.keys(component.transactionForm.controls).length).toBe(3);
+      expect(Object.keys(component.transactionForm.controls).length).toBe(4);
     });
   });
 
   describe('onSubmit', () => {
     it('should call the create the method if form is valid', (done) => {
       component.transactionForm.setValue({
+        id:1,
         status: "PENDING",
         comments: "UtilityBill",
         date: new Date(),

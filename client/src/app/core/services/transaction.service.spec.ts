@@ -28,6 +28,7 @@ describe('DataService', () => {
   it('#getData should return expected data', (done) => {
     const expectedData: TransactionList[] = [
       {
+        id:1,
         status: "PENDING",
         comments: "UtilityBill",
         date: new Date(),
@@ -61,6 +62,7 @@ describe('DataService', () => {
     it('should call create POST api', () => {
       const fnPost = jest.spyOn(service['_http'], "post");
       const model = {
+        id:1,
         status: "PENDING",
         comments: "UtilityBill",
         date: new Date(),
@@ -74,6 +76,7 @@ describe('DataService', () => {
     it('should call update PATCH api', () => {
       const fnPatch = jest.spyOn(service['_http'], "patch");
       const model = {
+        id:1,
         status: "PENDING",
         comments: "UtilityBill",
         date: new Date(),

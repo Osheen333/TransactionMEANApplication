@@ -55,6 +55,7 @@ describe('UpdateTransactionComponent', () => {
       const result = {
         data: {
           data: {
+            id:1,
             status: "PENDING",
             comments: "UtilityBill",
             date: '8/8/2022',
@@ -69,6 +70,7 @@ describe('UpdateTransactionComponent', () => {
       done();
 
       const value = component.transactionForm.value;
+      expect(value.id).toBe(result.data.data.id);
       expect(value.status).toBe(result.data.data.status);
       expect(value.comments).toBe(result.data.data.comments);
       expect(value.date).toBe(result.data.data.date);
@@ -79,6 +81,7 @@ describe('UpdateTransactionComponent', () => {
         data: {
           data: {
             _id: "123",
+            id:1,
             status: "PENDING",
             comments: "UtilityBill",
             date: "08/08/2020",
@@ -100,13 +103,14 @@ describe('UpdateTransactionComponent', () => {
     it('should create the form', () => {
       component.createForm();
       expect(component.transactionForm).toBeDefined();
-      expect(Object.keys(component.transactionForm.controls).length).toBe(3);
+      expect(Object.keys(component.transactionForm.controls).length).toBe(4);
     });
   });
 
   describe('onSubmit', () => {
     it('should call the create the method if form is valid', (done) => {
       component.transactionForm.setValue({
+        id:1,
         status: "PENDING",
         comments: "UtilityBill",
         date: "08/08/2020",

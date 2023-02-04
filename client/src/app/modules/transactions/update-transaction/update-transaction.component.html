@@ -16,6 +16,15 @@
     <form [formGroup]="transactionForm">
       <div fxLayout="column" fxLayoutAlign="space-between stretch">
         <mat-form-field appearance="outline">
+          <mat-label>Id</mat-label>
+          <input matInput formControlName="id" [readonly]="true" required />
+          <mat-error>
+            Id is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-form-field appearance="outline">
           <mat-label>Comments</mat-label>
           <input matInput formControlName="comments"  required />
           <mat-error>

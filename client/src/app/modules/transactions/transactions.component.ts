@@ -21,7 +21,7 @@ import { UpdateTransactionComponent } from './update-transaction/update-transact
   styleUrls: ['./transactions.component.scss'],
 })
 export class TransactionsComponent implements OnInit {
-  displayedColumns = ['comments','status','date','actions'];
+  displayedColumns = ['id','comments','status','date','actions'];
 
   statusDropdown = [
     {
@@ -231,6 +231,9 @@ export class TransactionDataSource extends DataSource<TransactionList> {
       let propertyA: any  = '';
       let propertyB: any = '';
       switch (this._sort.active) {
+        case 'id':
+          [propertyA, propertyB] = [a.id, b.id];
+          break;
         case 'date':
           [propertyA, propertyB] = [a.date, b.date];
           break;
